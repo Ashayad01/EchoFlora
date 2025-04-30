@@ -23,22 +23,6 @@ $(function(){
     
 });
 
-/*--- Carousel ---*/
-$(document).ready(function() {
-    // variables to grab the carousel images and display
-    let slides = $('.slide');
-    let slideIndex = 0;
-    $(slides[slideIndex]).show();
-    
-    // this function iterates through my plant list with a fade in and out animation every 5 sec
-    setInterval(function() {
-        $(slides[slideIndex]).fadeOut();
-        slideIndex = (slideIndex + 1) % slides.length;
-        console.log(slideIndex);
-        $(slides[slideIndex]).fadeIn();
-    }, 5000); 
-  });
-
 /*--- jQuery API ---*/
 // this one almost made me cry but we figured it out!
 
@@ -90,6 +74,24 @@ $(function(){
     });
   });
 
+
+  /*--- Carousel ---*/
+$(document).ready(function() {
+    // variables to grab the carousel images and display
+    let slides = $('.slide');
+    let slideIndex = 0;
+    $(slides[slideIndex]).show();
+    
+    // this function iterates through my plant list with a fade in and out animation every 5 sec
+    setInterval(function() {
+        $(slides[slideIndex]).fadeOut();
+        slideIndex = (slideIndex + 1) % slides.length;
+        console.log(slideIndex);
+        $(slides[slideIndex]).fadeIn();
+    }, 5000); 
+  });
+
+  
   /*--- Accordion ---*/
 
   // jQueryUI accordion method, nice and simple :)
