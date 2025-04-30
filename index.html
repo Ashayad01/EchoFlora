@@ -7,11 +7,16 @@
       name="description"
       content="This is an Art porfolio website where people can view and buy this artist art pieces."
     />
+    <title>Echo Flora</title>
     <!-- STYLESHEET-->
     <link rel="stylesheet" href="styles.css" />
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="scripts.js" defer></script>
-    <title>Echo Flora</title>
+    <script src="scripts.js" defer></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
   </head>
   <body>
     <header>
@@ -44,6 +49,129 @@
             plant brings beauty, calm, and a touch of nature to your everyday
             space.
           </p>
+        </section>
+      </section>
+      <section id="featured">
+        <h2>Featured Plants</h2>
+
+        <section class="carousel">
+          <!--Slide 1-->
+          <div class="slide">
+            <!--Slide content-->
+            <img
+              src="./Plant Photos/Mock API Photos/05Plant.jpg"
+              alt="image1"
+              width="500"
+              height="650"
+            />
+          </div>
+
+          <!--Slide 2-->
+          <div class="slide">
+            <!--Slide content-->
+            <img
+              src="./Plant Photos/Mock API Photos/01Plant.jpg"
+              alt="image2"
+              width="500"
+              height="650"
+            />
+          </div>
+
+          <!--Slide 3-->
+          <div class="slide">
+            <!--Slide content-->
+            <img
+              src="./Plant Photos/Mock API Photos/02Plant.jpg"
+              alt="image3"
+              width="500"
+              height="650"
+            />
+          </div>
+
+          <!--Slide 4-->
+          <div class="slide">
+            <!--Slide content-->
+            <img
+              src="./Plant Photos/Mock API Photos/04Plant.jpg"
+              alt="image4"
+              width="500"
+              height="650"
+            />
+          </div>
+
+          <!--Slide 5-->
+          <div class="slide">
+            <!--Slide content-->
+            <img
+              src="./Plant Photos/Mock API Photos/03Plant.jpg"
+              alt="image5"
+              width="500"
+              height="650"
+            />
+          </div>
+        </section>
+
+        <!-- <ul class="rslides">
+          <li><img src="./Plant Photos/Mock API Photos/05Plant.jpg" /></li>
+          <li><img src="./Plant Photos/Mock API Photos/01Plant.jpg" /></li>
+          <li><img src="./Plant Photos/Mock API Photos/02Plant.jpg" /></li>
+          <li><img src="./Plant Photos/Mock API Photos/04Plant.jpg" /></li>
+          <li><img src="./Plant Photos/Mock API Photos/03Plant.jpg" /></li>
+        </ul> -->
+      </section>
+
+      <section id="care">
+        <section id="care_header">
+          <h2>Plant Care <br />Guide</h2>
+        </section>
+
+        <section id="plant_care">
+          <h3>Light Requirements</h3>
+          <section>
+            <p>
+              Most houseplants thrive in bright, indirect light. Place your
+              plant near a window with filtered sunlight. Avoid harsh direct
+              rays, especially in the afternoon, as they can scorch leaves.
+              Low-light plants like pothos and snake plants do well in shaded
+              corners.
+            </p>
+          </section>
+          <h3>Watering Tips</h3>
+          <section>
+            <p>
+              Water when the top inch of soil feels dry. Overwatering is one of
+              the most common mistakes. Always check the soil before adding more
+              water. Ensure your pot has drainage holes to prevent root rot.
+              Tropical plants may enjoy a light misting, too!
+            </p>
+          </section>
+          <h3>Soil & Potting</h3>
+          <section>
+            <p>
+              Use well-draining soil tailored to your plant’s needs. Cacti and
+              succulents prefer sandy, gritty mixes, while leafy tropical plants
+              do best in organic-rich potting soils. Repot every 1–2 years to
+              refresh nutrients and give roots room to grow.
+            </p>
+          </section>
+          <h3>Temperature & Humidity</h3>
+          <section>
+            <p>
+              Keep plants in a stable, warm environment. Most houseplants prefer
+              temperatures between 65–75°F (18–24°C). Avoid cold drafts and
+              sudden changes. If your home is dry, especially in winter, boost
+              humidity with a pebble tray or humidifier.
+            </p>
+          </section>
+          <h3>Feeding & Fertilizing</h3>
+          <section>
+            <p>
+              Feed monthly during the growing season (spring and summer). Use a
+              balanced, water-soluble fertilizer for most plants. Cut back
+              feeding in fall and winter when growth slows down. Always follow
+              package instructions to avoid over-fertilizing.
+            </p>
+          </section>
         </section>
       </section>
     </main>
