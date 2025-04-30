@@ -227,8 +227,8 @@ nav{
 }
 
 #plant_nav button{
-    padding: 20px;
-    font-size: 1.25rem;
+    padding: 15px;
+    font-size: 1rem;
     border-radius: 20px;
     background-color: var(--dark-green);
     color: var(--beige);
@@ -244,6 +244,8 @@ nav{
     border-radius: 30px;
     display: block;
     margin: 0 auto;
+    height: 300px;
+    width: 300px;
 }
 
 
