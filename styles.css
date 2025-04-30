@@ -80,6 +80,7 @@ table {
     margin: 0 auto; 
     font-family: var(--sec-font);
     max-width: auto;
+    scroll-behavior: smooth;
 }
 
 
@@ -131,6 +132,7 @@ nav{
     color: var(--light-green);
 }
 
+
 #hero-section{
     color: var(--beige);
     font-size: 8rem;
@@ -140,12 +142,23 @@ nav{
     max-width: 1280px;
 }
 
+.hidden{
+    display: none; 
+    font-size: 4rem;
+    line-height: 1.5em;
+   letter-spacing: 2px;
+   color: var(--ash-brown);
+}
+
+
+
 
 /* --- ABOUT --- */
 
 #about{
     display: flex;
-    margin: 10em 0;
+    margin: 15em 0;
+    
 }
 
 #about img{
@@ -153,7 +166,7 @@ nav{
     height: auto;
     border-radius: 50px;
     margin: 0 10em 0 10em;
-    /* filter: drop-shadow(0 .5rem .25rem grey); */
+    
 }
 
 #about-text{
@@ -169,14 +182,101 @@ nav{
     margin-right: 4em;
 }
 
+/* --- Catalog --- */
+
+#catalog{
+    background-color: #142821;
+    background: url("./Plant Photos/flowers.png");
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 50px;
+    height: 100vh;
+    
+}
+
+#catalog h2{
+    text-align: center;
+    color: var(--dark-green);
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+#catalog h4{
+    margin-top: 30px;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--dark-green);
+    font-family: var(--main-font);
+    text-transform: uppercase;
+}
+#catalog p {
+    color: var(--ash-brown);
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2em;
+}
+
+#plant_nav{
+    text-align: center;
+    margin-top: 2em;
+}
+
+#plant_nav button{
+    padding: 25px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background-color: var(--light-green);
+    color: var(--beige);
+    border: none;
+}
+
+#plant_nav button:hover{
+    background-color: var(--dark-green);
+    color: var(--beige);
+}
+
+.plant-api img{
+    border-radius: 30px;
+    margin-left: 20em;
+    
+}
+
+
+
 /* --- Carousel --- */
 #featured {
-    margin-bottom: 10em;
+    margin: 15em 0;
+    padding: 15em 0 ;
+   width: 90%;
+   margin: 0 auto;
+   border-radius: 70px;
   }
   
   #featured h2 {
     text-align: center;
+    /* color: #f6ede5; */
+    padding-top: 40px;
+    
   }
+
+  #featured-content{
+    display: flex;
+    margin-top: 5em;
+  }
+
+  #featured-text{
+    width: 50%;
+    margin: 10em 5em 3em;
+  }
+  #featured h3 {
+    font-size: 2rem;
+    color: var(--dark-green);
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  #featured p{
+    color: var(--dark-green);
+  } 
   
   .carousel{
     position: relative;
@@ -201,6 +301,7 @@ nav{
 
 #care{
     display: flex;
+    padding-bottom: 15em;
 }
 
 #care_header{
@@ -250,4 +351,14 @@ h3.ui-accordion-header-active.ui-state-active.ui-state-default{
 
 
 
+/* --- FOOTER ---*/
+footer{
+    background-color: #142821;
+    padding: 2em;
+}
+
+footer p {
+    color: var(--beige);
+    text-align: center;
+}
 

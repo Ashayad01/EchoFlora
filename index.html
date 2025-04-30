@@ -15,6 +15,7 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
   </head>
@@ -24,11 +25,19 @@
         <div><a id="logo" href="#">Echo Flora</a></div>
         <ul id="main-nav">
           <li><a href="#about">About</a></li>
-          <li><a href="#">Catalog</a></li>
-          <li><a href="#">Care</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#catalog">Catalog</a></li>
+          <li><a href="#care">Care</a></li>
         </ul>
       </nav>
       <section id="hero-section">
+        <section >
+          <h1 class="hidden">
+            Welcome Back
+            <span id="user_name"></span>
+          </h1>
+        
+
         <h1>Let Nature Echo <br />Through Your Home</h1>
       </section>
     </header>
@@ -51,8 +60,23 @@
           </p>
         </section>
       </section>
+
+      <section id="catalog">
+        <h2>Plant Catalog</h2>
+        <div id="plants"></div>
+        <div id="plant_nav">
+          <button id="plant_btn">Next Plant</button>
+        </div>
+      </section>
+
       <section id="featured">
         <h2>Featured Plants</h2>
+
+        <section id="featured-content">
+          <section id="featured-text">
+          <h3>Handpicked by Echo Flora to bring harmony, vitality, and beauty to your space.</h3>
+          <p>Discover our spotlighted selections—plants chosen for their striking appearance, ease of care, and ability to thrive in a variety of environments. Whether you're a seasoned green thumb or just starting your plant journey, these favorites are perfect for brightening your home and elevating your connection with nature.</p>
+        </section>
 
         <section class="carousel">
           <!--Slide 1-->
@@ -110,14 +134,8 @@
             />
           </div>
         </section>
-
-        <!-- <ul class="rslides">
-          <li><img src="./Plant Photos/Mock API Photos/05Plant.jpg" /></li>
-          <li><img src="./Plant Photos/Mock API Photos/01Plant.jpg" /></li>
-          <li><img src="./Plant Photos/Mock API Photos/02Plant.jpg" /></li>
-          <li><img src="./Plant Photos/Mock API Photos/04Plant.jpg" /></li>
-          <li><img src="./Plant Photos/Mock API Photos/03Plant.jpg" /></li>
-        </ul> -->
+      </section>
+        
       </section>
 
       <section id="care">
@@ -175,5 +193,9 @@
         </section>
       </section>
     </main>
+
+    <footer>
+      <p>This website is used for educational purposes</p>
+    </footer>
   </body>
 </html>
