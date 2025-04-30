@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="This is an Art porfolio website where people can view and buy this artist art pieces."
+      content="This is a website for plant lovers who are looking for inspiration for their next plant purchase."
     />
     <title>Echo Flora</title>
     <!-- STYLESHEET-->
@@ -25,19 +25,13 @@
         <div><a id="logo" href="#">Echo Flora</a></div>
         <ul id="main-nav">
           <li><a href="#about">About</a></li>
-          <li><a href="#featured">Featured</a></li>
           <li><a href="#catalog">Catalog</a></li>
+          <li><a href="#featured">Featured</a></li>
           <li><a href="#care">Care</a></li>
         </ul>
       </nav>
       <section id="hero-section">
-        <section >
-          <h1 class="hidden">
-            Welcome Back
-            <span id="user_name"></span>
-          </h1>
-        
-
+        <h1 class="hidden">Welcome Back <span id="user_name"></span></h1>
         <h1>Let Nature Echo <br />Through Your Home</h1>
       </section>
     </header>
@@ -63,10 +57,13 @@
 
       <section id="catalog">
         <h2>Plant Catalog</h2>
-        <div id="plants"></div>
-        <div id="plant_nav">
-          <button id="plant_btn">Next Plant</button>
-        </div>
+
+        <section id="api-container">
+          <div id="plants"></div>
+          <div id="plant_nav">
+            <button id="plant_btn">Next Plant</button>
+          </div>
+        </section>
       </section>
 
       <section id="featured">
@@ -74,68 +71,76 @@
           <section id="featured-text">
             <h2>Featured Plants</h2>
 
-          <h3>Handpicked by Echo Flora to bring harmony, vitality, and beauty to your space.</h3>
-          <p>Discover our spotlighted selections—plants chosen for their striking appearance, ease of care, and ability to thrive in a variety of environments. Whether you're a seasoned green thumb or just starting your plant journey, these favorites are perfect for brightening your home and elevating your connection with nature.</p>
+            <h3>
+              Handpicked by Echo Flora to bring harmony, vitality, and beauty to
+              your space.
+            </h3>
+            <p>
+              Discover our spotlighted selections—plants chosen for their
+              striking appearance, ease of care, and ability to thrive in a
+              variety of environments. Whether you're a seasoned green thumb or
+              just starting your plant journey, these favorites are perfect for
+              brightening your home and elevating your connection with nature.
+            </p>
+          </section>
+
+          <section class="carousel">
+            <!--Slide 1-->
+            <div class="slide">
+              <!--Slide content-->
+              <img
+                src="./Plant Photos/Mock API Photos/05Plant.jpg"
+                alt="image1"
+                width="500"
+                height="650"
+              />
+            </div>
+
+            <!--Slide 2-->
+            <div class="slide">
+              <!--Slide content-->
+              <img
+                src="./Plant Photos/Mock API Photos/01Plant.jpg"
+                alt="image2"
+                width="500"
+                height="650"
+              />
+            </div>
+
+            <!--Slide 3-->
+            <div class="slide">
+              <!--Slide content-->
+              <img
+                src="./Plant Photos/Mock API Photos/02Plant.jpg"
+                alt="image3"
+                width="500"
+                height="650"
+              />
+            </div>
+
+            <!--Slide 4-->
+            <div class="slide">
+              <!--Slide content-->
+              <img
+                src="./Plant Photos/Mock API Photos/04Plant.jpg"
+                alt="image4"
+                width="500"
+                height="650"
+              />
+            </div>
+
+            <!--Slide 5-->
+            <div class="slide">
+              <!--Slide content-->
+              <img
+                src="./Plant Photos/Mock API Photos/03Plant.jpg"
+                alt="image5"
+                width="500"
+                height="650"
+              />
+            </div>
+          </section>
         </section>
-
-        <section class="carousel">
-          <!--Slide 1-->
-          <div class="slide">
-            <!--Slide content-->
-            <img
-              src="./Plant Photos/Mock API Photos/05Plant.jpg"
-              alt="image1"
-              width="500"
-              height="650"
-            />
-          </div>
-
-          <!--Slide 2-->
-          <div class="slide">
-            <!--Slide content-->
-            <img
-              src="./Plant Photos/Mock API Photos/01Plant.jpg"
-              alt="image2"
-              width="500"
-              height="650"
-            />
-          </div>
-
-          <!--Slide 3-->
-          <div class="slide">
-            <!--Slide content-->
-            <img
-              src="./Plant Photos/Mock API Photos/02Plant.jpg"
-              alt="image3"
-              width="500"
-              height="650"
-            />
-          </div>
-
-          <!--Slide 4-->
-          <div class="slide">
-            <!--Slide content-->
-            <img
-              src="./Plant Photos/Mock API Photos/04Plant.jpg"
-              alt="image4"
-              width="500"
-              height="650"
-            />
-          </div>
-
-          <!--Slide 5-->
-          <div class="slide">
-            <!--Slide content-->
-            <img
-              src="./Plant Photos/Mock API Photos/03Plant.jpg"
-              alt="image5"
-              width="500"
-              height="650"
-            />
-          </div>
-        </section>
-      </section>
-        
       </section>
 
       <section id="care">

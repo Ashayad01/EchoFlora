@@ -79,7 +79,6 @@ table {
 * {
     margin: 0 auto; 
     font-family: var(--sec-font);
-    max-width: auto;
     scroll-behavior: smooth;
 }
 
@@ -183,18 +182,9 @@ nav{
 }
 
 /* --- Catalog --- */
-
 #catalog{
-    background-color: #142821;
-    background: url("./Plant Photos/flowers.png");
-    width: 60%;
-    margin: 0 auto;
-    border-radius: 50px;
-    height: 100vh;
-    /* padding-bottom: 7em; */
-    
+    margin-bottom: 5em;
 }
-
 #catalog h2{
     text-align: center;
     color: var(--dark-green);
@@ -202,18 +192,33 @@ nav{
     padding-bottom: .5em;
 }
 #catalog h4{
-    margin-top: 30px;
-    font-size: 3rem;
+    padding-bottom: .5em;
+    font-size: 2rem;
     text-align: center;
     color: var(--dark-green);
     font-family: var(--main-font);
     text-transform: uppercase;
 }
 #catalog p {
-    color: var(--ash-brown);
+    
+    color: var(--dark-green);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 2em;
+}
+
+.label-color{
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+#api-container{
+    background: url("./Plant Photos/flowers.png");
+    margin: 0 auto;
+    border-radius: 50px;
+    height: auto;
+    padding: 4em 0;
+    width: 60%;
 }
 
 #plant_nav{
@@ -222,30 +227,29 @@ nav{
 }
 
 #plant_nav button{
-    padding: 25px;
-    font-size: 1.5rem;
+    padding: 20px;
+    font-size: 1.25rem;
     border-radius: 20px;
-    background-color: var(--light-green);
+    background-color: var(--dark-green);
     color: var(--beige);
     border: none;
 }
 
 #plant_nav button:hover{
-    background-color: var(--dark-green);
+    background-color:#142821;
     color: var(--beige);
 }
 
-.plant-api img{
+#api-img{
     border-radius: 30px;
-    margin-left: 20em;
-    
+    display: block;
+    margin: 0 auto;
 }
 
 
 
 /* --- Carousel --- */
 #featured {
-    margin: 15em 0;
     padding: 7em 0 ;
    width: 90%;
    margin: 0 auto;

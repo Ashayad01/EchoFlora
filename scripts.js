@@ -42,11 +42,11 @@ $(function(){
     function showPlant(index){
       let plant = plantData[index];
       let html = `<section class="plant-api">
-      <img src="${plant.default_image.medium_url || " "}">
       <h4>${plant.common_name}</h4>
-      <p>Scientific Name: ${plant.scientific_name.join(", ")}</p>
-      <p>Watering: ${plant.watering}</p>
-      <p>Sunlight: ${plant.sunlight}</p>
+      <img id="api-img" src="${plant.default_image.medium_url || " "}">
+      <p><span class="label-color">Scientific Name: </span>${plant.scientific_name.join(", ")}</p>
+      <p><span class="label-color">Watering: </span>${plant.watering}</p>
+      <p><span class="label-color">Sunlight: </span>${plant.sunlight}</p>
       </section>`;
       
       plantCatalog.html(html);
@@ -91,7 +91,7 @@ $(document).ready(function() {
     }, 5000); 
   });
 
-  
+
   /*--- Accordion ---*/
 
   // jQueryUI accordion method, nice and simple :)
