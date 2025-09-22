@@ -82,10 +82,13 @@ table {
     scroll-behavior: smooth;
 }
 
+main{
+    max-width: 3000px;
+}
 
 header{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background: linear-gradient(90deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url("./Plant Photos/Hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -93,7 +96,7 @@ header{
     
 }
 
-nav{
+header nav{
     margin: auto;
     display: flex;
     height: 100px;
@@ -111,7 +114,7 @@ nav{
 }
 
 #logo:hover{
-    color: var(--light-green);
+    color: var(--light-green)
 }
 #main-nav{
     display: flex;
@@ -135,7 +138,7 @@ nav{
 #hero-section{
     color: var(--beige);
     font-size: 7rem;
-    margin-top: 1em ;
+    margin-top: 2em ;
     margin-left: .80em;
     line-height: 11rem;
     max-width: 1280px;
@@ -149,6 +152,21 @@ nav{
    color: var(--ash-brown);
 }
 
+button{
+    color: var(--beige);
+    background-color: var(--dark-green);
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    font-family: var(--main-font);
+    font-weight: bold;
+    padding: 1em 1.5em;
+}
+
+button:hover{
+    background-color: var(--light-green);
+}
+
 
 
 
@@ -156,7 +174,8 @@ nav{
 
 #about{
     display: flex;
-    margin: 15em 0;
+    padding-top: 16em;
+    padding-bottom: 8em;
     
 }
 
@@ -172,6 +191,10 @@ nav{
     margin: 11em 3em 10em 0em;
 }
 
+#about button{
+    margin-top: 20px;
+}
+
 #about h2{
     
     margin-bottom: 20px;
@@ -182,77 +205,84 @@ nav{
 }
 
 /* --- Catalog --- */
+
 #catalog{
-    margin-bottom: 5em;
+    padding: 8em 0;
 }
+
 #catalog h2{
     text-align: center;
-    color: var(--dark-green);
-    padding-top: .5em;
-    padding-bottom: .5em;
+  
+    margin-bottom: .5em;
 }
-#catalog h4{
-    padding-bottom: .5em;
-    font-size: 2rem;
+
+#catalog-words {
+    width: 50%;
     text-align: center;
-    color: var(--dark-green);
-    font-family: var(--main-font);
-    text-transform: uppercase;
+    margin: 0 auto;
+    font-family: var(--sec-font);
+    padding-bottom: 3em;
 }
-#catalog p {
+
+#api-container {
+    background-color: #142821;
+    width: 70%;
+    border-radius: 40px;
+    margin: 0 auto;
+  
     
-    color: var(--dark-green);
-    text-align: center;
-    font-size: 1.25rem;
-    line-height: 2em;
+    
+
+}
+#plants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.label-color{
-    font-weight: bold;
-    color: var(--dark-green);
+
+#plants img {
+    left: 48rem;
+    top: 4em;
+    border-radius: 40px;
+    grid-column: 2;
 }
 
-#api-container{
-    background: url("./Plant Photos/flowers.png");
-    margin: 0 auto;
-    border-radius: 50px;
-    height: auto;
-    padding: 4em 0;
-    width: 60%;
+#plants h4{
+    color: var(--beige);
+    font-family: var(--sec-font);
+    font-size: 2.75rem;
+    margin-left: 1.5em;
+    margin-bottom: 1em; 
+    margin-top: 1.5em;
 }
-
 #plant_nav{
-    text-align: center;
-    margin-top: 2em;
+    margin-top: 2.5em;
+    margin-left: 8em;    
 }
 
-#plant_nav button{
-    padding: 15px;
-    font-size: 1rem;
-    border-radius: 20px;
-    background-color: var(--dark-green);
+#plant_nav button {
+    padding: 1em 2em;
+    font-family: var(--sec-font);
+
+}
+
+
+#plants p{
     color: var(--beige);
-    border: none;
+    font-family: var(--sec-font);
+    font-size: 1.25rem;
+    margin-left: 7em;
 }
 
-#plant_nav button:hover{
-    background-color:#142821;
-    color: var(--beige);
-}
-
-#api-img{
-    border-radius: 30px;
-    display: block;
-    margin: 0 auto;
-    height: 300px;
-    width: 300px;
+.label-color {
+    color: var(--light-green);
 }
 
 
 
 /* --- Carousel --- */
 #featured {
-    padding: 7em 0 ;
+    padding: 8em 0;
    width: 90%;
    margin: 0 auto;
    border-radius: 70px;
@@ -299,59 +329,60 @@ nav{
     display: none;
     
   }
+
+  #featured button{
+    margin-top: 30px;
+  }
   
 
 /* --- Accordion ---*/
 
 #care{
     display: flex;
-    padding-bottom: 15em;
-    padding-top: 7em;
+    padding-top: 8em;
+    padding-bottom: 16em;
+}
+#care h2 {
+    padding-top: .5em;
+    font-size: 5.5rem;
 }
 
 #care_header{
     margin-left: 8em;
-    width:70%;
+    width:50%;
 }
 
 #plant_care{
-    margin-right: 2em;
+   width: 95%;
 }
 #care h3{
-    font-family: var(--sec-font);
+    font-family: var(--main-font);
+    color: var(--dark-green);
     font-size: 2rem;
-    padding: 15px;
-    color: #fff;
+    border-bottom: 2px solid;
+    border-color: #142821;
 }
 
 #care p{
-    color: var(--dark-green);
+    width: 80%;
+    padding-top: 1rem;
+    color: var(--light-green);
     font-weight: bold;
 }
 
 .ui-accordion .ui-accordion-header {
-    border-radius: calc(2rem - 8px);
-    border: 1px solid var(--light-green);
-    background-color: var(--light-green);
-    /* width: 80%; */
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    
-
-    font-weight: 500;
+    width: 80%;
+    padding: 1.5em 0 .25em 0;
+   
 }
 
 .ui-accordion .ui-accordion-content{
-    padding: 0;
     
-    width: 95%;
     
 }
 
 h3.ui-accordion-header-active.ui-state-active.ui-state-default{
-    background-color: var(--dark-green);
-    border-color: var(--dark-green);
-    color: var(--dark-green);
+   
 }
 
 
@@ -360,10 +391,33 @@ h3.ui-accordion-header-active.ui-state-active.ui-state-default{
 footer{
     background-color: #142821;
     padding: 2em;
+    display: flex;
 }
 
-footer p {
+footer nav{
+   margin: 0 auto;
+}
+
+nav h4 {
+    font-family: var(--sec-font);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light-green);
+}
+.footer-list li{
+    
+    padding: .75em 0 .5em 0;
+    
+}
+.footer-list a {
+    text-decoration: none;
+    font-weight: 400;
     color: var(--beige);
-    text-align: center;
+    font-family: var(--sec-font);
+    font-size: 1rem;
+}
+
+.footer-list a:hover {
+    color: #A4A677;
 }
 
