@@ -172,37 +172,7 @@ button:hover{
 
 /* --- ABOUT --- */
 
-#about{
-    display: flex;
-    padding-top: 16em;
-    padding-bottom: 8em;
-    
-}
 
-#about img{
-    width: 25em;
-    height: auto;
-    border-radius: 50px;
-    margin: 0 10em 0 10em;
-    
-}
-
-#about-text{
-    margin: 11em 3em 10em 0em;
-}
-
-#about button{
-    margin-top: 20px;
-}
-
-#about h2{
-    
-    margin-bottom: 20px;
-}
-
-#about p{
-    margin-right: 4em;
-}
 
 /* --- Catalog --- */
 
