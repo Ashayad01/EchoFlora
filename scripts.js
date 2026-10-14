@@ -24,6 +24,52 @@ $(function(){
     
 });
 
+
+/*-- Plant API -- */
+async function loadPlants() {
+  try {
+    let response = await fetch("http://localhost:3000/api/plants");
+
+     if(!response.ok){
+    throw new Error("failed to load plants");
+  }
+
+   let plants = await response.json();
+   let container = document.getElementById("plant-container");
+
+   if(!container){
+    throw new Error('Could not find an element with id="plant-container"');
+   }
+
+container.replaceChildren();
+
+plants.forEach(plant => {
+  let card = document.createElement("article");
+  let image = document.createElement("img");
+  let heading = document.createElement("h2");
+  let watering = document.createElement("p");
+  let light = document.createElement("p");
+  let difficulty = document.createElement("p");
+
+  image.src = `http://localhost:3000${plant.image}`;
+  image.alt = plant.name;
+
+  heading.textContent = plant.name;
+  watering.textContent = `Watering: ${plant.wateringDetails}`;
+  light.textContent = `Light Requirements: ${plant.lightRequirements}`;
+  difficulty.textContent = `Difficulty: ${plant.difficulty}`;
+
+  card.append(image, heading, watering, light, difficulty);
+  container.appendChild(card);
+});
+} catch(error){
+  console.error("Error loading plants:", error);
+}
+
+}
+ loadPlants();
+
+
 // /*--- jQuery API ---*/
 // // this one almost made me cry but we figured it out!
 
