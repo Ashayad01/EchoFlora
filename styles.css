@@ -50,11 +50,11 @@ table {
 
 
  /* --- ROOT VARIABLES --- */
- @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sree+Krushnadevaraya&display=swap');
+
 
  :root {
-    --main-font: "Sree Krushnadevaraya", serif;
-    --sec-font: "Poppins", sans-serif;
+    --main-font: "cesso", sans-serif;
+    --sec-font: "fiona", sans-serif;
     --dark-green: #354D31;
     --light-green: #A4A677;
     --beige: #f6ede5;
@@ -65,14 +65,33 @@ table {
  h2{
     color: var(--dark-green);
     font-family: var(--main-font);
-    font-size: 4rem;
+    font-size: 5rem;
  }
 
  p{
     font-family: var(--sec-font);
-    font-size: 1.25rem;
-    line-height: 2rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: .20rem;
+
  }
+
+ button{
+    color: white;
+    background-color: var(--dark-green);
+    border-radius: 50px;
+    border: none;
+    font-size: 1.25rem;
+    font-family: var(--main-font);
+    font-weight: bold;
+    padding: 1em 1.5em;
+}
+
+button:hover{
+    background-color: white;
+    color: var(--dark-green);
+    border: 2px solid var(--dark-green);
+}
 
 
  /* --- MY CODE --- */
@@ -152,27 +171,55 @@ header nav{
    color: var(--ash-brown);
 }
 
-button{
-    color: var(--beige);
-    background-color: var(--dark-green);
-    border-radius: 30px;
-    border: none;
-    font-size: 1rem;
-    font-family: var(--main-font);
-    font-weight: bold;
-    padding: 1em 1.5em;
-}
 
-button:hover{
-    background-color: var(--light-green);
-}
 
 
 
 
 /* --- ABOUT --- */
 
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
+#about-carousel {
+    margin: 20% auto;
+
+}
+
+ .carousel{
+    position: relative;
+    border-radius: 20px;
+    width: 500px;
+    height: 650px;
+    display: block;
+    overflow: hidden;
+
+  }
+
+  .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+#about-text{
+    margin-top: 30%;
+}
+
+#about-text h2 {
+    padding-bottom: .5em;
+}
+
+#about-text p {
+    width: 95%;
+}
+
+#about-text button{
+    margin-top: 1.5em;
+}
 
 /* --- Catalog --- */
 
@@ -282,23 +329,7 @@ button:hover{
     color: var(--dark-green);
   } 
   
-  .carousel{
-    position: relative;
-    border-radius: 50px;
-    width: 500px;
-    height: 650px;
-    display: block;
-    overflow: hidden;
-
-  }
-
-  .slide{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-    
-  }
+ 
 
   #featured button{
     margin-top: 30px;
