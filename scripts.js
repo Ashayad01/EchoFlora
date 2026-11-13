@@ -25,108 +25,91 @@ $(function(){
 });
 
 
-/*-- Plant API -- */
+/* --  Plant API Carousel -- */
+
+let plants = [];
+let currentPlantIndex = 0;
+
+const API_URL = "http://localhost:3000/api/plants";
+const API_BASE_URL = "http://localhost:3000";
+
 async function loadPlants() {
+  const container = document.getElementById("plant-container");
+
   try {
-    let response = await fetch("http://localhost:3000/api/plants");
+    const response = await fetch(API_URL);
 
-     if(!response.ok){
-    throw new Error("failed to load plants");
+    if (!response.ok) {
+      throw new Error(`Failed to load plants: ${response.status}`);
+    }
+
+    plants = await response.json();
+
+    if (plants.length === 0) {
+      container.textContent = "No plants are available.";
+      return;
+    }
+
+    renderPlant();
+  } catch (error) {
+    console.error("Error loading plants:", error);
+    container.textContent =
+      "Unable to load plants. Please try again later.";
   }
+}
 
-   let plants = await response.json();
-   let container = document.getElementById("plant-container");
+function renderPlant() {
+  const container = document.getElementById("plant-container");
 
-   if(!container){
-    throw new Error('Could not find an element with id="plant-container"');
-   }
 
-container.replaceChildren();
+  // Get the currently selected plant from the array
+  const plant = plants[currentPlantIndex];
 
-plants.forEach(plant => {
-  let card = document.createElement("article");
-  let image = document.createElement("img");
-  let heading = document.createElement("h2");
-  let watering = document.createElement("p");
-  let light = document.createElement("p");
-  let difficulty = document.createElement("p");
+  if (!plant) return;
 
-  image.src = `http://localhost:3000${plant.image}`;
+  const image = document.getElementById("plant-img");
+  image.src = `${API_BASE_URL}${plant.image}`;
   image.alt = plant.name;
 
-  heading.textContent = plant.name;
-  watering.textContent = `Watering: ${plant.wateringDetails}`;
-  light.textContent = `Light Requirements: ${plant.lightRequirements}`;
+  // Show the common name
+  const heading = document.getElementById("plant-name");
+  heading.textContent = `${plant.name}`;
+
+  // Show the scientific name
+  const scientificName = document.getElementById("sceinceName");
+  scientificName.textContent = `Scientific Name: ${plant.scientificName}`;
+
+  const watering = document.getElementById("watering");
+  watering.textContent = ` ${plant.wateringDetails}`;
+
+  const light = document.getElementById("sunlight");
+  light.textContent = `${plant.lightRequirements}`;
+
+  const difficulty = document.getElementById("difficulty");
   difficulty.textContent = `Difficulty: ${plant.difficulty}`;
 
-  card.append(image, heading, watering, light, difficulty);
-  container.appendChild(card);
+}
+
+// Previous button
+document.getElementById("prev-plant").addEventListener("click", () => {
+  if (currentPlantIndex > 0) {
+    currentPlantIndex--;
+    renderPlant();
+  }
 });
-} catch(error){
-  console.error("Error loading plants:", error);
-}
 
-}
- loadPlants();
+// Next button
+document.getElementById("next-plant").addEventListener("click", () => {
+  if (currentPlantIndex < plants.length - 1) {
+    currentPlantIndex++;
+    renderPlant();
+  }
+});
 
-
-// /*--- jQuery API ---*/
-// // this one almost made me cry but we figured it out!
-
-// $(function(){
-//     // these are my variables for my api url & pushing my data into the html document
-//     let plantCatalog = $("#plants");
-//     let urlStart = `https://perenual.com/api/species-list?key=`;
-//     let apiKey = "sk-SmSv681151b75949c10119";
-//     let endUrl = `&page=1`;
-
-//      let plantCatalog = $("#plants");
-//     let urlStart = `https://perenual.com/api/species-list?key=`;
-//     let apiKey = "sk-SmSv681151b75949c10119";
-//     let endUrl = `&page=1`;
-    
-//     // set the plant data to an empty array so that it can iterate through the json file
-//     let plantData = [];
-//     let currentIndex = 0;
+// Load plant data from the API
+loadPlants();
 
 
-//     // in this function I formatted the information from my JSON that will be called in my Ajax function. This function also pushes my data into the html document
-//     function showPlant(index){
-//       let plant = plantData[index];
-//       let html = `
-//       <img id="api-img" src="${plant.default_image.medium_url || " "}">
-//       <section>
-//       <h4>${plant.common_name}</h4>
-//       <p><span class="label-color">Scientific Name: </span>${plant.scientific_name.join(", ")}</p>
-//       <p><span class="label-color">Watering: </span>${plant.watering}</p>
-//       <p><span class="label-color">Sunlight: </span>${plant.sunlight}</p>
-//       </section>
-//       `;
-      
-//       plantCatalog.html(html);
-//     }
-  
-//     //in this Ajax function I called my showPlant() function that holds the syntax for what I want displayed on the page. Ajax actually calls on the JSON file to retrieve the data
-//     $.ajax({
-//         url: `${urlStart}${apiKey}${endUrl}`,
-//         dataType: "json"
-//     }).done(function(data){
-//         plantData = data.data;
-//       showPlant(currentIndex);
-      
-//       // button to change the data
-//       $("#plant_btn").on("click", function(){
-//         currentIndex = (currentIndex + 1) % plantData.length;
-//         showPlant(currentIndex);
-//       });
-  
-  
-//     }).fail(function(jqXHR){
-//         //throws error if there is an issue with the database, just for safe keeping (jk its required)
-//       plantCatalog.html("There was an issue with the database");
-//       console.error(jqXHR.responseJSON.status_message);
-//     });
-//   });
 
 
   /*--- Carousel ---*/

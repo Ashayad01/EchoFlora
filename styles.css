@@ -99,6 +99,7 @@ button:hover{
     margin: 0 auto; 
     font-family: var(--sec-font);
     scroll-behavior: smooth;
+    
 }
 
 main{
@@ -229,7 +230,7 @@ header nav{
 
 #catalog h2{
     text-align: center;
-  
+
     margin-bottom: .5em;
 }
 
@@ -247,8 +248,6 @@ header nav{
     border-radius: 40px;
     margin: 0 auto;
   
-    
-    
 
 }
 #plants {
@@ -269,7 +268,7 @@ header nav{
     font-family: var(--sec-font);
     font-size: 2.75rem;
     margin-left: 1.5em;
-    margin-bottom: 1em; 
+    margin-bottom: .25em; 
     margin-top: 1.5em;
 }
 #plant_nav{
@@ -335,6 +334,115 @@ header nav{
     margin-top: 30px;
   }
   
+
+  /*-- NEW Catalog --*/
+
+  #plant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 1fr;
+  }
+
+  #plant-header {
+    color: white;
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 2em;
+    background-color: #142821;
+    height: 250px;
+    width: 85%;
+    border-radius: 0px 50px 50px 0px;
+  }
+
+ #plant-header h2 {
+    padding: 1em 0 .25em 2.5em;
+    color: white;
+    font-size: 3.5rem;
+    
+ }
+
+#plant-header p {
+    text-align: center;
+    margin: 0em 4em 0em 4em;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+#plantImage-box {
+     grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    border-radius: 50px 0px 0px 50px;
+    position: relative;
+    
+}
+
+#plant-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#plant-details {
+    grid-column: 1;
+    grid-row: 1/ span 2;
+    background-color: var(--dark-green);
+    border-radius: 0px 50px 50px 0px;
+    width: 95%;
+    margin-top: 17em;
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+#plant-details h3{
+    font-size: 3.5rem;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-family: var(--main-font);
+}
+
+#sun-water {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.plant-icon {
+   width: 10px;
+   height: 10px;
+   
+}
+
+#watering {
+    font-size: 1.5rem;
+    position: relative;
+
+}
+
+#sunlight {
+    font-size: 1.5rem;
+    position: relative;
+
+}
+
+
+.plant-navigation button{
+    background-color: var(--beige);
+    color: var(--dark-green);
+    position: rekative;
+    margin-top: 3em;
+}
+
+.plant-navigation button:hover{
+    background-color: var(--dark-green);
+    color: var(--beige);
+    border-color: var(--beige);
+}
+
+
 
 /* --- Accordion ---*/
 
