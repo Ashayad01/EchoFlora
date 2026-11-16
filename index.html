@@ -11,6 +11,10 @@
     <!-- STYLESHEET-->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://use.typekit.net/zsf3wej.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
     <!-- SCRIPTS -->
     <script src="scripts.js" defer></script>
     <!-- jQuery -->
@@ -19,6 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
@@ -146,19 +151,9 @@
           <p id="sceinceName"></p>
           <div id="sun-water">
             <div>
-              <img
-                src="./Plant Photos/icons/waterIcon.png"
-                class="plant-icon"
-                alt="tan water icon"
-              />
               <p id="watering"></p>
             </div>
             <div>
-              <img
-                src="./Plant Photos/icons/sunIcon.png"
-                class="plant-icon"
-                alt="tan sun icon"
-              />
               <p id="sunlight"></p>
             </div>
           </div>
@@ -171,7 +166,17 @@
           </div>
         </section>
       </section>
-
+      <section id="store">
+        <section id="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-hash="slide1">Slide 1</div>
+            <div class="swiper-slide" data-hash="slide2">Slide 2</div>
+            <div class="swiper-slide" data-hash="slide3">Slide 3</div>
+            <div class="swiper-slide" data-hash="slide4">Slide 4</div>
+            <div class="swiper-slide" data-hash="slide5">Slide 5</div>
+          </div>
+        </section>
+      </section>
       <section id="featured">
         <section id="featured-content">
           <section id="featured-text">

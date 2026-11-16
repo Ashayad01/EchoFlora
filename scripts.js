@@ -1,5 +1,8 @@
 "use strict";
 
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
 
 /*--- Local Storage ---*/
 //lowkey I'm the most proud of this one, even though its simple
@@ -109,7 +112,13 @@ document.getElementById("next-plant").addEventListener("click", () => {
 // Load plant data from the API
 loadPlants();
 
-
+/*-- SHOP --*/
+const swiper = new Swiper('.swiper', {
+  freeMode: {
+    enabled: true,
+    sticky: true,
+  },
+});
 
 
   /*--- Carousel ---*/

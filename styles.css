@@ -296,45 +296,6 @@ header nav{
 
 
 
-/* --- Carousel --- */
-#featured {
-    padding: 8em 0;
-   width: 90%;
-   margin: 0 auto;
-   border-radius: 70px;
-  }
-  
-  #featured h2 {
-    padding-bottom: .5em;
-  }
-
-  #featured-content{
-    display: flex;
-    margin-top: 5em;
-  }
-
-  #featured-text{
-    width: 50%;
-    margin: 8em 5em 3em;
-  }
-  #featured h3 {
-    font-size: 1.5rem;
-    color: var(--light-green);
-    font-weight: bold;
-    margin-bottom: 1em;
-  }
-
-  #featured p{
-    color: var(--dark-green);
-  } 
-  
- 
-
-  #featured button{
-    margin-top: 30px;
-  }
-  
-
   /*-- NEW Catalog --*/
 
   #plant-container {
@@ -441,6 +402,50 @@ header nav{
     color: var(--beige);
     border-color: var(--beige);
 }
+
+
+/* --- SHOP --- */
+
+
+
+/* --- Featured --- */
+#featured {
+    padding: 8em 0;
+   width: 90%;
+   margin: 0 auto;
+   border-radius: 70px;
+  }
+  
+  #featured h2 {
+    padding-bottom: .5em;
+  }
+
+  #featured-content{
+    display: flex;
+    margin-top: 5em;
+  }
+
+  #featured-text{
+    width: 50%;
+    margin: 8em 5em 3em;
+  }
+  #featured h3 {
+    font-size: 1.5rem;
+    color: var(--light-green);
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  #featured p{
+    color: var(--dark-green);
+  } 
+  
+ 
+
+  #featured button{
+    margin-top: 30px;
+  }
+  
 
 
 
