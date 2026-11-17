@@ -3,27 +3,47 @@
 "use strict";
 
 /*--- Local Storage ---*/
-//lowkey I'm the most proud of this one, even though its simple
+//this function looks to see if there is a name in the local storage. if not it will prompt the user to enter their name through an alert box. When the user returns, there name will in the hero
 
-//this function looks to see if there is a name in the local storage. if not it will prompt the user to enter their name through an alert box. When the user returns, there name will in the hero 
 $(function(){
-    let name = localStorage.getItem("name");
+  let name = localStorage.getItem("name");
 
-    if(!name){
-        name = prompt("Welcome to Echo Flora! Please enter your name so that it may echo through our site");
-        if(name){
-            localStorage.setItem("name", name);
-        }
+  function showName(n){
+    $("#user-name").text(n);
+    $(".hidden").show();
+  }
+
+  if(name){
+    showName(name);
+  } else {
+    $("#nameOverlay").addClass("open");
+    $("#nameInput").focus();
+  }
+
+  function saveName(){
+    const entered = $("#nameInput").val().trim();
+    if(!entered){
+      $("#nameInput").focus();
+      return;
     }
-
-    if(name){
-        $("#user_name").text(name);
-        $(".hidden").show();
-    }
-
-    localStorage.clear();
     
+    localStorage.setItem("name", entered);
+    $("#nameOverlay").removeClass("open");
+    showName(entered);
+  }
+
+  $("#nameSubmit").on("click", saveName);
+  $("#nameInput").on("keydown", function(e){
+    if(e.key === "Enter") saveName();
+  });
+  $("#nameSkip").on("click", function(){
+    $("#nameOverlay").removeClass("open");
+  });
+
+    // localStorage.clear();
 });
+
+
 
 
 /* --  Plant API Carousel -- */

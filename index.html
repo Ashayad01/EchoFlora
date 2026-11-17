@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -15,8 +16,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="modal.css" />
     <!-- SCRIPTS -->
     <script src="scripts.js" defer></script>
+    <script src="ModalWindow.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -25,6 +28,30 @@
   </head>
   <body>
     <header>
+      <section id="welcome-alert">
+        <div class="name-overlay" id="nameOverlay">
+          <div
+            class="name-box"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="nameTitle"
+          >
+            <h2 id="nameTitle">Welcome to Echo Flora</h2>
+            <p>Please enter you name so we may greet you properly!</p>
+            <input
+              type="text"
+              id="nameInput"
+              placeholder="Your Name"
+              maxlength="30"
+              autocomplete="given-name"
+            />
+            <div class="name-actions">
+              <button type="button" id="nameSkip">Skip</button>
+              <button type="button" id="nameSubmit">Enter</button>
+            </div>
+          </div>
+        </div>
+      </section>
       <nav>
         <div><a id="logo" href="#">Echo Flora</a></div>
         <ul id="main-nav">
@@ -35,16 +62,11 @@
         </ul>
       </nav>
       <section id="hero-section">
+        <h2 class="hidden">Welcome Back <span id="user-name"></span></h2>
         <h1>Let Nature Echo <br />Through Your Home</h1>
       </section>
     </header>
     <main>
-      <section id="welcome">
-        <h2 class="hidden">
-          <div>Welcome Back</div>
-          <span id="user_name"></span>
-        </h2>
-      </section>
       <section id="about">
         <div id="about-carousel">
           <div class="carousel">

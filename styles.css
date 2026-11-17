@@ -80,7 +80,7 @@ table {
     color: white;
     background-color: var(--dark-green);
     border-radius: 50px;
-    border: none;
+    border: 2px solid var(--dark-green);
     font-size: 1.25rem;
     font-family: var(--main-font);
     font-weight: bold;
@@ -131,6 +131,7 @@ header nav{
     color: var(--beige);
     margin: 20px 100px;
     max-width: 1280px;
+    font-family: var(--main-font);
 }
 
 #logo:hover{
@@ -144,6 +145,7 @@ header nav{
 #main-nav a{
     color: var(--beige);
     font-size: 1.5rem;
+    font-family: var(--sec-font);
     text-decoration: none;
     font-weight: 400;
     margin: 20px;
@@ -158,35 +160,88 @@ header nav{
 #hero-section{
     color: var(--beige);
     font-size: 7rem;
-    margin-top: 2em ;
+    margin-top: 1em;
     margin-left: .80em;
-    line-height: 11rem;
+    line-height: 8rem;
     max-width: 1280px;
+    font-family: var(--main-font);
 }
 
 .hidden{
     display: none; 
-    font-size: 4rem;
-    line-height: 1.5em;
-   letter-spacing: 2px;
+    font-size: 2.5rem;
+    top: 0;
+    bottom: 0;
    color: var(--ash-brown);
+   
 }
 
 
 
-/* Welcome */
+/* Welcome Alert */
+.name-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0,0,0, .55);
+}
 
-#welcome{
+.name-overlay.open{
+    display: flex;
+}
+
+.name-box{
+    width: 100%;
+    max-width: 380px;
+    padding: 28px;
+    background: white;
+    border-radius: 40px;
+    border-top: 5px solid var(--light-green);
+    box-shadow: 0 20px 50px rgba(0,0,0, 0.3);
+}
+
+.name-box h2{
+    margin-bottom: .25em;
+    font-size: 3.25rem;
     text-align: center;
-    font-family: var(--main-font);
 }
 
-#welcome h2{
+.name-box p{
+    font-size: 1.15rem;
+    line-height: 1em;
     padding-top: 1em;
-    color: var(--dark-green);
+    padding-bottom: .75em;
+    color: var(--dark-green);    
 }
-#welcome div {
-    font-size: .75em;
+
+.name-box input{
+    width: 95%;
+    border: 2.5px solid var(--dark-green);
+    border-radius: 5px;
+    margin-bottom: 1em;
+    font-size: 1.25rem;
+    color: var(--dark-green);
+    padding-left: .5em;
+}
+
+.name-box input:focus {
+    outline: 2.5px solid var(--light-green);
+    border-color: transparent;
+}
+
+.name-actions{
+    float: right;
+    padding-right: 10px;
+}
+
+.name-actions button{
+    padding: .75em 1.25em;
+    font-size: 1rem;
+   
 }
 
 /* --- ABOUT --- */
