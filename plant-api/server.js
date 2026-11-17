@@ -7,7 +7,13 @@ const plants = require("./data/plants");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+    origin:[
+        "https://Ashayad01.github.io", 
+    "http://localhost:5500",
+    "http://127.0.0.1:5500"
+    ]
+}));
 app.use(express.json());
 
 //Server plant images
