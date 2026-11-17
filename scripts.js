@@ -31,7 +31,9 @@ $(function(){
 let plants = [];
 let currentPlantIndex = 0;
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" 
+? "http://localhost:3000"
+:"https://echoflora.onrender.com";
 const API_URL = `${API_BASE_URL}/api/plants`;
 
 const prevBtn = document.getElementById("prev-plant");
