@@ -1,11 +1,11 @@
-const express = require ("express");
+const express = require("express");
 const cors = require("cors");
 const path = require("path");
 
 const plants = require("./data/plants");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -29,15 +29,25 @@ app.get("/api/plants", (req, res) => {
 //Get an individual plant by ID
 app.get("/api/plants/:id", (req, res) => {
     const id = Number(req.params.id);
-    const plant = plants.find(plant => plant.id === id);
+    const plant = plants.find(p => p.id === id);
 
     if(!plant){
-        return res.status(404).json({
+        return res.status(400).json({
             message: "Plant not found"
         });
     }
 
     res.json(plant);
+});
+
+
+app.use((req, res) => {
+    res.status(404).json({ message: "Route not found"});
+});
+
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).json({message: "Something went wrong"});
 });
 
 app.listen(PORT, () => {

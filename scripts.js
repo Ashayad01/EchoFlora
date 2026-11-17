@@ -1,8 +1,6 @@
+
+
 "use strict";
-
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
-
 
 /*--- Local Storage ---*/
 //lowkey I'm the most proud of this one, even though its simple
@@ -33,11 +31,19 @@ $(function(){
 let plants = [];
 let currentPlantIndex = 0;
 
-const API_URL = "http://localhost:3000/api/plants";
 const API_BASE_URL = "http://localhost:3000";
+const API_URL = `${API_BASE_URL}/api/plants`;
+
+const prevBtn = document.getElementById("prev-plant");
+const nextBtn = document.getElementById("next-plant");
+
+function updateButtons() {
+  prevBtn.disabled = currentPlantIndex === 0;
+  nextBtn.disabled = currentPlantIndex === plants.length - 1;
+}
 
 async function loadPlants() {
-  const container = document.getElementById("plant-container");
+  const status = document.getElementById("plant-status");
 
   try {
     const response = await fetch(API_URL);
@@ -49,21 +55,19 @@ async function loadPlants() {
     plants = await response.json();
 
     if (plants.length === 0) {
-      container.textContent = "No plants are available.";
+      status.textContent = "No plants are available.";
       return;
     }
 
     renderPlant();
   } catch (error) {
     console.error("Error loading plants:", error);
-    container.textContent =
+    status.textContent =
       "Unable to load plants. Please try again later.";
   }
 }
 
 function renderPlant() {
-  const container = document.getElementById("plant-container");
-
 
   // Get the currently selected plant from the array
   const plant = plants[currentPlantIndex];
@@ -79,46 +83,40 @@ function renderPlant() {
   heading.textContent = `${plant.name}`;
 
   // Show the scientific name
-  const scientificName = document.getElementById("sceinceName");
-  scientificName.textContent = `Scientific Name: ${plant.scientificName}`;
+  const scientificName = document.getElementById("science-name");
+  scientificName.textContent = plant.scientificName;
 
   const watering = document.getElementById("watering");
-  watering.textContent = ` ${plant.wateringDetails}`;
+  watering.textContent = `Watering: ${plant.wateringDetails}`;
 
   const light = document.getElementById("sunlight");
-  light.textContent = `${plant.lightRequirements}`;
+  light.textContent = `Light: ${plant.lightRequirements}`;
 
   const difficulty = document.getElementById("difficulty");
   difficulty.textContent = `Difficulty: ${plant.difficulty}`;
 
+  updateButtons();
+
 }
 
 // Previous button
-document.getElementById("prev-plant").addEventListener("click", () => {
-  if (currentPlantIndex > 0) {
-    currentPlantIndex--;
-    renderPlant();
-  }
+prevBtn.addEventListener("click", () => {
+if (currentPlantIndex > 0){
+  currentPlantIndex --;
+  renderPlant();
+}
 });
 
-// Next button
-document.getElementById("next-plant").addEventListener("click", () => {
-  if (currentPlantIndex < plants.length - 1) {
-    currentPlantIndex++;
-    renderPlant();
-  }
+nextBtn.addEventListener("click", () => {
+if (currentPlantIndex < plants.length - 1){
+  currentPlantIndex ++;
+  renderPlant();
+}
 });
+
 
 // Load plant data from the API
 loadPlants();
-
-/*-- SHOP --*/
-const swiper = new Swiper('.swiper', {
-  freeMode: {
-    enabled: true,
-    sticky: true,
-  },
-});
 
 
   /*--- Carousel ---*/
@@ -132,11 +130,9 @@ $(document).ready(function() {
     setInterval(function() {
         $(slides[slideIndex]).fadeOut();
         slideIndex = (slideIndex + 1) % slides.length;
-        console.log(slideIndex);
         $(slides[slideIndex]).fadeIn();
     }, 5000); 
   });
-
 
   /*--- Accordion ---*/
 
