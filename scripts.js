@@ -21,7 +21,7 @@ $(function(){
         $(".hidden").show();
     }
 
-    // localStorage.clear();
+    localStorage.clear();
     
 });
 
@@ -89,10 +89,10 @@ function renderPlant() {
   scientificName.textContent = plant.scientificName;
 
   const watering = document.getElementById("watering");
-  watering.textContent = `Watering: ${plant.wateringDetails}`;
+  watering.textContent = plant.wateringDetails;
 
   const light = document.getElementById("sunlight");
-  light.textContent = `Light: ${plant.lightRequirements}`;
+  light.textContent = plant.lightRequirements;
 
   const difficulty = document.getElementById("difficulty");
   difficulty.textContent = `Difficulty: ${plant.difficulty}`;
